@@ -115,6 +115,13 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 /* ---------- Sertifikat & Prestasi ---------- */
 .sertifikat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
 .sertifikat-card{ border:1px solid var(--line); background:var(--cream-soft); border-radius:4px; padding:20px 22px; }
+.sertifikat-thumb{
+  display:flex; align-items:center; justify-content:center;
+  aspect-ratio:4/3; border-radius:3px; margin-bottom:14px;
+  overflow:hidden; border:1px solid var(--line); background:var(--cream-soft);
+}
+.sertifikat-thumb img{ width:100%; height:100%; object-fit:contain; display:block; transition:transform .25s ease; }
+.sertifikat-thumb:hover img{ transform:scale(1.03); }
 .sertifikat-tahun{ font-size:0.76rem; color:var(--sogan); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
 .sertifikat-card h3{ font-size:1rem; margin-bottom:4px; }
 .sertifikat-card p{ font-size:0.88rem; color:#3A2C1D; margin:0; }
@@ -159,13 +166,6 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 .project-link{ font-size:0.92rem; font-weight:700; text-decoration:none; color:var(--indigo-deep); border-bottom:1.5px solid var(--emas); }
 .project-link:hover{ color:var(--sogan); }
 @media (max-width:560px){ .project{ grid-template-columns:1fr; } .project-index{ display:none; } }
-
-.sertifikat-thumb{
-  display:block; aspect-ratio:4/3; border-radius:3px; margin-bottom:14px;
-  overflow:hidden; border:1px solid var(--line); background:var(--line);
-}
-.sertifikat-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .25s ease; }
-.sertifikat-thumb:hover img{ transform:scale(1.04); }
 
 /* ---------- Kegiatan ---------- */
 .kegiatan-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
@@ -213,3 +213,26 @@ footer{
 .footer-nav a, .footer-social a{ text-decoration:none; color:#5A4B36; font-weight:600; }
 .footer-nav a:hover, .footer-social a:hover{ color:var(--sogan); }
 @media (max-width:640px){ footer{ flex-direction:column; } }
+/* ---------- Halaman Artikel Penuh ---------- */
+.artikel-back{
+  display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:var(--sogan);
+  font-weight:700; font-size:0.86rem; margin-bottom:28px;
+}
+.artikel-back:hover{ color:var(--indigo-deep); }
+.artikel-konten{ max-width:70ch; margin:0 auto 60px; }
+.artikel-tanggal-terbit{
+  display:block; font-size:0.78rem; font-weight:700; color:var(--sogan);
+  text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px;
+}
+.artikel-konten h1{
+  font-family:var(--serif); font-weight:700; color:var(--indigo-deep);
+  font-size:2rem; line-height:1.25; margin-bottom:24px;
+}
+.artikel-konten h2{
+  font-family:var(--serif); font-weight:600; color:var(--indigo-deep);
+  font-size:1.3rem; margin:34px 0 12px;
+}
+.artikel-konten p{ margin-bottom:16px; line-height:1.75; color:#3A2C1D; }
+.artikel-konten ul.artikel-konten-list{ margin:0 0 16px; padding-left:22px; }
+.artikel-konten ul.artikel-konten-list li{ margin-bottom:10px; line-height:1.7; color:#3A2C1D; }
+.artikel-konten strong{ color:var(--indigo-deep); }
