@@ -113,18 +113,30 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 .timeline-desc{ font-size:0.92rem; color:#3A2C1D; max-width:62ch; }
 
 /* ---------- Sertifikat & Prestasi ---------- */
-.sertifikat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
-.sertifikat-card{ border:1px solid var(--line); background:var(--cream-soft); border-radius:4px; padding:20px 22px; }
-.sertifikat-thumb{
-  display:flex; align-items:center; justify-content:center;
-  aspect-ratio:4/3; border-radius:3px; margin-bottom:14px;
-  overflow:hidden; border:1px solid var(--line); background:var(--cream-soft);
+.sertifikat-grid{ display:grid; grid-template-columns:1fr; gap:18px; }
+.sertifikat-card{
+  display:flex; gap:20px; align-items:flex-start;
+  border:1px solid var(--line); background:var(--cream-soft); border-radius:12px; padding:18px;
 }
-.sertifikat-thumb img{ width:100%; height:100%; object-fit:contain; display:block; transition:transform .25s ease; }
-.sertifikat-thumb:hover img{ transform:scale(1.03); }
-.sertifikat-tahun{ font-size:0.76rem; color:var(--sogan); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
-.sertifikat-card h3{ font-size:1rem; margin-bottom:4px; }
-.sertifikat-card p{ font-size:0.88rem; color:#3A2C1D; margin:0; }
+.sertifikat-thumb{
+  display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+  width:130px; aspect-ratio:4/3; border-radius:8px;
+  overflow:hidden; border:1px solid var(--line); background:var(--cream);
+}
+.sertifikat-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .25s ease; }
+.sertifikat-thumb:hover img{ transform:scale(1.05); }
+.sertifikat-body{ flex:1 1 auto; min-width:0; }
+.sertifikat-badge{
+  display:inline-block; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.4px;
+  color:var(--indigo-deep); background:#E4ECFB; padding:3px 10px; border-radius:20px; margin-bottom:8px;
+}
+.sertifikat-tahun{ font-size:0.82rem; color:var(--sogan); font-weight:700; margin-bottom:6px; }
+.sertifikat-card h3{ font-size:1.02rem; margin-bottom:6px; }
+.sertifikat-card p{ font-size:0.88rem; color:#3A2C1D; margin:0; max-width:60ch; }
+@media (max-width:560px){
+  .sertifikat-card{ flex-direction:column; }
+  .sertifikat-thumb{ width:100%; max-width:220px; }
+}
 
 /* ---------- Skills ---------- */
 .skills-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
