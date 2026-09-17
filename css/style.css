@@ -165,9 +165,9 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 .kegiatan-card{ border:1px solid var(--line); background:var(--cream-soft); border-radius:4px; padding:18px 20px 20px; }
 .kegiatan-thumb{
   aspect-ratio:16/9; border-radius:3px; margin-bottom:14px;
-  background:repeating-linear-gradient(45deg, var(--line), var(--line) 10px, transparent 10px, transparent 20px);
-  border:1px dashed var(--line);
+  overflow:hidden; border:1px solid var(--line); background:var(--line);
 }
+.kegiatan-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 .kegiatan-tahun{ font-size:0.76rem; color:var(--sogan); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
 .kegiatan-card h3{ font-size:1rem; margin-bottom:4px; }
 .kegiatan-card p{ font-size:0.88rem; color:#3A2C1D; margin:0; }
