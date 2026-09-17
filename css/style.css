@@ -42,8 +42,10 @@ nav{
   backdrop-filter:blur(6px);
   border-bottom:1px solid var(--line);
 }
-.nav-inner{ max-width:960px; margin:0 auto; padding:18px 28px; }
-.nav-links{ display:flex; gap:28px; }
+.nav-inner{ max-width:960px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.nav-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--serif); font-weight:600; color:var(--indigo-deep); font-size:1rem; }
+.nav-brand img{ width:34px; height:34px; border-radius:50%; object-fit:cover; border:1px solid var(--line); }
+.nav-links{ display:flex; gap:20px; flex-wrap:wrap; }
 .nav-links a{
   text-decoration:none; font-size:0.95rem; font-weight:600; color:var(--ink);
   padding-bottom:2px; border-bottom:1px solid transparent; transition:border-color .2s ease, color .2s ease;
@@ -95,6 +97,13 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 .about-body p:last-child{ margin-bottom:0; }
 .key{ color:var(--sogan); font-weight:700; }
 
+/* ---------- Profil Profesional ---------- */
+.profil-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.profil-item{ border:1px solid var(--line); background:var(--cream-soft); border-radius:4px; padding:20px 22px; }
+.profil-label{ font-size:0.78rem; font-weight:700; color:var(--sogan); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+.profil-value{ font-weight:700; color:var(--indigo-deep); }
+@media (max-width:700px){ .profil-grid{ grid-template-columns:1fr; } }
+
 /* ---------- Timeline (Pendidikan & Pengalaman) ---------- */
 .timeline{ display:flex; flex-direction:column; gap:24px; }
 .timeline-item{ border-left:3px solid var(--emas); padding-left:18px; }
@@ -116,7 +125,12 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
   border:1px solid var(--line); background:var(--cream-soft); border-radius:4px; padding:20px 22px;
 }
 .skill-card-wide{ grid-column:1/-1; }
-.skill-card-label{ font-size:0.8rem; font-weight:700; color:var(--sogan); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px; }
+.skill-card-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
+.skill-card-label{ font-size:0.8rem; font-weight:700; color:var(--sogan); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0; }
+.skill-level{ font-size:0.72rem; font-weight:700; padding:3px 10px; border-radius:20px; white-space:nowrap; }
+.skill-level-mahir{ background:var(--indigo); color:var(--cream); }
+.skill-level-menengah{ background:var(--sogan); color:var(--cream); }
+.skill-level-dasar{ background:transparent; border:1px dashed var(--emas); color:var(--sogan); }
 .pills{ display:flex; flex-wrap:wrap; gap:8px; }
 .pill{
   font-size:0.84rem; font-weight:700; color:var(--indigo-deep); background:transparent;
@@ -146,6 +160,30 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 .project-link:hover{ color:var(--sogan); }
 @media (max-width:560px){ .project{ grid-template-columns:1fr; } .project-index{ display:none; } }
 
+/* ---------- Kegiatan ---------- */
+.kegiatan-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+.kegiatan-card{ border:1px solid var(--line); background:var(--cream-soft); border-radius:4px; padding:18px 20px 20px; }
+.kegiatan-thumb{
+  aspect-ratio:16/9; border-radius:3px; margin-bottom:14px;
+  background:repeating-linear-gradient(45deg, var(--line), var(--line) 10px, transparent 10px, transparent 20px);
+  border:1px dashed var(--line);
+}
+.kegiatan-tahun{ font-size:0.76rem; color:var(--sogan); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+.kegiatan-card h3{ font-size:1rem; margin-bottom:4px; }
+.kegiatan-card p{ font-size:0.88rem; color:#3A2C1D; margin:0; }
+
+/* ---------- Artikel / Blog ---------- */
+.artikel-list{ display:flex; flex-direction:column; }
+.artikel-item{
+  display:block; text-decoration:none; color:inherit; padding:20px 0; border-top:1px solid var(--line);
+  transition:padding-left .18s ease;
+}
+.artikel-list a:last-child{ border-bottom:1px solid var(--line); }
+.artikel-item:hover{ padding-left:8px; }
+.artikel-tanggal{ font-size:0.76rem; color:var(--sogan); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+.artikel-item h3{ font-family:var(--serif); font-weight:600; font-size:1.1rem; color:var(--indigo-deep); margin-bottom:6px; }
+.artikel-item p{ font-size:0.92rem; color:#3A2C1D; max-width:64ch; }
+
 /* ---------- Contact ---------- */
 .contact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
 .contact-card{
@@ -159,7 +197,12 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 
 /* ---------- Footer ---------- */
 footer{
-  margin-top:60px; padding:26px 0 8px; border-top:1px solid var(--line);
-  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  margin-top:60px; padding:26px 0 30px; border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;
   font-size:0.86rem; color:#5A4B36;
 }
+.footer-name{ font-family:var(--serif); font-weight:600; color:var(--indigo-deep); margin-bottom:4px; }
+.footer-nav, .footer-social{ display:flex; gap:14px; flex-wrap:wrap; }
+.footer-nav a, .footer-social a{ text-decoration:none; color:#5A4B36; font-weight:600; }
+.footer-nav a:hover, .footer-social a:hover{ color:var(--sogan); }
+@media (max-width:640px){ footer{ flex-direction:column; } }
