@@ -95,6 +95,21 @@ section{ padding:52px 0 8px; scroll-margin-top:80px; }
 .about-body p:last-child{ margin-bottom:0; }
 .key{ color:var(--sogan); font-weight:700; }
 
+/* ---------- Timeline (Pendidikan & Pengalaman) ---------- */
+.timeline{ display:flex; flex-direction:column; gap:24px; }
+.timeline-item{ border-left:3px solid var(--emas); padding-left:18px; }
+.timeline-tahun{ font-size:0.78rem; font-weight:700; color:var(--sogan); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px; }
+.timeline-item h3{ font-size:1.05rem; margin-bottom:2px; }
+.timeline-sub{ font-size:0.92rem; font-weight:600; color:var(--indigo-deep); margin-bottom:6px; }
+.timeline-desc{ font-size:0.92rem; color:#3A2C1D; max-width:62ch; }
+
+/* ---------- Sertifikat & Prestasi ---------- */
+.sertifikat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+.sertifikat-card{ border:1px solid var(--line); background:var(--cream-soft); border-radius:4px; padding:20px 22px; }
+.sertifikat-tahun{ font-size:0.76rem; color:var(--sogan); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+.sertifikat-card h3{ font-size:1rem; margin-bottom:4px; }
+.sertifikat-card p{ font-size:0.88rem; color:#3A2C1D; margin:0; }
+
 /* ---------- Skills ---------- */
 .skills-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
 .skill-card{
